@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>baroque-first-page.html</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Palatino Linotype';
+        letter-spacing: 1px;
+      }
+      .navbar-dark {
+        position: sticky;
+        height: 32px;
+        line-height: 1px;
+        letter-spacing: 1px;
+      }
+      .container-fluid {
+        position: relative;
+        font-size: 12px;
+      }
+      .nav-span-1 {
+        color: white;
+        left: 34%;
+        position: relative;
+      }
+      .nav-span-1 a ,#heading-and-links a{
+        position: relative;
+        color: white;
+        text-decoration: none;
+      }
+      .nav-span-1 a::after,#heading-and-links a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        left: 0;
+        bottom: -2px;
+        transition: all 0.5s ease;
+      }
+      #heading-and-links a::after{
+        background-color: black;
+      }
+      #heading-and-links #red-line::after{
+        background-color: red;
+      }
+      .nav-span-1 a:hover::after,#heading-and-links a:hover::after {
+        width: 0;
+      }
+      @media only screen and (max-width: 767px) and (min-width: 413px){
+        .container-fluid-1 {
+          position: relative;
+          font-size: 10px;
+        }
+        .nav-span-1 {
+          left: 10%;
+        }
+        #banner-1-desktop {
+          display: none;
+        }
+        #banner-1-mobile {
+          display: block;
+        }
+        #banner-1 {
+          background-image: url('https://baroque.pk/cdn/shop/files/mobilebanner_69.jpg?v=1722237356&width=1000');
+          background-size: 100%;
+        }
+        #banner-1-btn{
+          position: relative;
+          top: 500px;
+          left: 45%;
+          border: 2px solid white;
+          background-color: white;
+        }
+        .carousel-item-div-1-div2 p{
+          font-size: 10px;
+          width: 50%;
+          margin-bottom: 0px;
+        }
+        .carousel-item-div-1-div2 button{
+          padding: 0.25rem 1.25rem;
+          font-size: 10px;
+        }
+      }
+      @media only screen and (max-width: 413px){
+        .container-fluid-1 {
+          position: relative;
+          font-size: 8px;
+        }
+        .nav-span-1 {
+          left: 5%;
+        }
+        #banner-1 {
+          background-image: url('https://baroque.pk/cdn/shop/files/mobilebanner_69.jpg?v=1722237356&width=1000');
+          background-size: 100%;
+        }
+        #banner-1-btn{
+          position: relative;
+          top: 400px;
+          left: 35%;
+          border: 2px solid white;
+          background-color: white;
+        }
+        #LOGO-1{
+          width: 100px;
+        }
+        .carousel-item-div-1-div2 p{
+          font-size: 8px;
+          width: 50%;
+          margin-bottom: 0px;
+        }
+        .carousel-item-div-1-div2 button{
+          padding: 0.25rem 1.25rem;
+          font-size: 8px;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        #banner-1-desktop {
+          display: block;
+        }
+        #banner-1-mobile {
+          display: none;
+        }
+        #banner-1 {
+          background-image: url('https://baroque.pk/cdn/shop/files/MAin_BAnner62.jpg?v=1722237350&width=2400');
+          background-size: cover;
+          background-position: 100% 100%;
+        }
+        #banner-1-btn{
+          position:relative;
+          top: 500px;
+          left: 45%;
+          border: 2px solid white;
+          background-color: white;
+        }
+      }
+      .number-input {
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            width: 130px;
+        }
+      .number-input button {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            border: none;
+            margin-bottom: 10px;
+      }
+      .number-input button:hover{
+            background-color: none;
+      }
+      .number-input input {
+            width: 60px;
+            text-align: center;
+            border-radius: 0.25rem;
+            height: 40px;
+            border: none;
+      }
+      .number-input-2{  
+            width: 120px;
+      }
+      .number-input-2 button{
+            width: 20px;
+            height: 40px;
+            border: none;
+            margin-bottom: 10px;
+      }
+      .number-input-2 input{
+        width: 60px;
+        text-align: center;
+        height: 40px;
+        border: none;
+      }
+
+      #banner-1 {
+        margin-top: -80px;
+        height: 600px;
+        background-repeat: no-repeat;
+      }
+      #banner-1-btn {
+        position: relative;
+        padding: 0.65rem 1.75rem;
+        border: 1px solid white;
+        background-color: white;
+        color: black;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.5s ease;
+        border-radius: 0px;
+      }
+      
+      #banner-1-btn::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        transition: transform 0.5s ease-out;
+        z-index: -1;
+        transform: translateX(0%);
+      }
+
+      #banner-1-btn:hover::before {
+        transform: translateX(100%);
+      }
+      
+      #banner-1-btn:hover {
+        color: white;
+        background-color: transparent;
+      }
+      .container-1 {
+        background-color: rgba(45, 43, 43, 0.267);
+        margin-top: -10px;
+      }
+      .container-1:hover {
+        background-color: white;
+      }
+      #main-image-1, #main-image-2{
+        overflow: hidden;
+        position: relative; /* Add this */
+      }
+      #main-image-1 img, #main-image-2 img{
+        transition: transform 5s ease;
+        z-index: -1;
+      }
+      #main-image-1 img:hover,#main-image-2 img:hover{
+        cursor: pointer;
+        transform: scale(1.3);
+        z-index: -1;
+      }
+      #main-image-1-div, #main-image-2-div{
+        position: absolute;
+        z-index: 5;
+        bottom: 10%;
+        left: 30%;
+      }
+      #main-image-1-div button,#main-image-2-div button {
+        position: relative;
+        padding: 0.65rem 1.75rem;
+        border: 1px solid white;
+        background-color: white;
+        color: black;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.5s ease;
+        border-radius: 0px;
+      }
+
+      #main-image-1-div button::before,#main-image-2-div button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: white; 
+        transition: left 0.5s ease-out; 
+        z-index: -1;
+      }
+
+      #main-image-1-div button:hover::before,#main-image-2-div button:hover::before {
+        left: 100%;
+      }
+
+      #main-image-1-div button:hover, #main-image-2-div button:hover {
+        color: white; 
+        background-color: transparent;
+      }
+      #heading-and-links a{
+        display: block;
+        margin-bottom: 10px;
+        color: black;
+      }
+      #viw-product-img{
+        background-image: url('https://baroque.pk/cdn/shop/files/62_109ebe9b-f43c-48a1-93ef-29213cd3da0e.jpg?v=1722409688&width=800');
+        background-size: cover;
+        cursor: pointer;
+      }
+      #viw-product-img:hover{
+        background-image: url('https://baroque.pk/cdn/shop/files/65_5b801e1c-4f56-46f7-ab67-53dee38d60f7.jpg?v=1722409688&width=600');
+        background-size: cover;
+      }
+      #viw-product-img-1{
+        background-image: url('https://baroque.pk/cdn/shop/files/85_e73a1d2d-ea2f-462a-95fd-b7dc83c5eb3e.jpg?v=1721027168&width=800');
+        background-size: cover;
+        cursor: pointer;
+      }
+      #viw-product-img-1:hover{
+        background-image: url('https://baroque.pk/cdn/shop/files/86_fc86c458-ce37-4798-b9de-6b3eea36d58a.jpg?v=1721027168&width=700');
+        background-size: cover;
+      }
+      #viw-product-img-2{
+        background-image: url('https://baroque.pk/cdn/shop/files/164_f2c257f5-e660-4ccf-b537-64cbfe6a6532.jpg?v=1721474505&width=800');
+        background-size: cover;
+        cursor: pointer;
+      }
+      #viw-product-img-2:hover{
+        background-image: url('https://baroque.pk/cdn/shop/files/165_d07102a1-c8d3-438c-a9a9-e00b667e3f47.jpg?v=1721474505&width=700');
+        background-size: cover;
+      }
+
+      .carousel-item-div-1-div2 button,.video-text button {
+        position: relative;
+        padding: 0.65rem 1.75rem;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.5s ease;
+        border-radius: 0px;
+      }
+
+      .carousel-item-div-1-div2 button::before,.video-text button::before,.form button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        transition: transform 1s ease-out;
+        z-index: -1;
+        transform: translateX(0%);
+      }
+
+      .carousel-item-div-1-div2 button:hover::before,.video-text button:hover::before,.form button:hover::before {
+        transform: translateX(100%);
+      }
+
+      .carousel-item-div-1-div2 button:hover,.video-text button:hover,.form button:hover {
+        color: black;
+        border: 1px solid black;
+        background-color: transparent;
+      }
+      .video-text{
+        position: relative;
+      }
+      .video-text video{
+        z-index: -1;
+      }
+      .video-text button{
+        position: absolute;
+        z-index: 5;
+        bottom: 10%;
+        left: 30%;
+      }
+      .form button{
+        position: relative;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.5s ease;
+        border-radius: 0px;
+      }
+      .footer-div-1 a{
+        display: block;
+        color: gray;
+        text-decoration: none;
+        cursor: pointer;
+        margin-bottom: 5px;
+      }
+      .footer-div-1 a:hover{
+        color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark nav-1">
+      <div class="container-fluid container-fluid-1">
+        <span class="navbar-text text-center nav-span-1">
+          FOR INTERNATIONAL WEBSITE VISIT <a href="#">WWW.BAROQUE.COM.PK</a>
+        </span>
+      </div>
+    </nav>
+
+    <nav class="navbar" style="z-index: 5; position: sticky; top: 0px;">
+      <div class="container-fluid p-3 container-1">
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+          <svg style="margin-bottom: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+          </svg>
+        </button>
+        
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              I will not close if you click outside of me.
+            </div>
+          </div>
+        </div>
+        <a class="navbar-brand d-flex" href="#"><img id="LOGO-1" style="cursor: pointer;" width="140px" src="https://baroque.pk/cdn/shop/files/LOGO_PNG_V01_2.png?v=1694417343&width=280" alt=""></a>
+        <form class="d-flex" role="search">
+          <a href="#" style="margin-top: 7px; margin-right:20px;">
+            <svg id="Person" aria-hidden="true" fill="none" focusable="false" width="24" class="header__nav-icon icon icon-account" viewBox="0 0 24 24">
+              <path color="black" d="M16.125 8.75c-.184 2.478-2.063 4.5-4.125 4.5s-3.944-2.021-4.125-4.5c-.187-2.578 1.64-4.5 4.125-4.5 2.484 0 4.313 1.969 4.125 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path color="black" d="M3.017 20.747C3.783 16.5 7.922 14.25 12 14.25s8.217 2.25 8.984 6.497" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></path>
+            </svg>
+          </a>
+          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+            <svg style="margin-bottom: 15px; margin-right:20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+              <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+            </svg>
+          </button>
+          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex justify-content-center align-items-center">
+              <svg style="margin-bottom: 4px; margin-right:20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+              </svg>
+              <input class="form-control me-2" style="border: none; font-size: 38px; width: 90%;" type="search" placeholder="Search For...." aria-label="Search">
+            </div>
+          </div>
+          <button style="padding-bottom: 25px;" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+            <path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
+          </svg></button>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header" style="border-bottom: 1px solid rgb(185, 176, 176);">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel" style="letter-spacing: 4px;">CART</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="container" style="padding-bottom: 10px; color: gray;">
+                You are eligible for free shipping.
+              </div>
+              <div class="row" style="border-top: 1px solid rgb(185, 176, 176);">
+                <div class="col-12" style="height: 200px; z-index: 1;">
+                  <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <div class="item-1 p-3 d-flex" style="gap: 10px;">
+                      <div class="item-1-img" style="width: 30%; height: 100%;"><img width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/2277/5269/files/114_7eefbfd9-65ba-4894-8e5d-9102969bda3a.jpg?v=1720785901&width=210" alt=""></div>
+                      <div class="item-1-text d-flex flex-column">
+                        PRET
+                        <a href="baroque-third-page.html" style="display: block; color: black; text-decoration: none;">PRINTED LAWN PR-958</a>
+                        PKR 4,990.00
+                        <p>S</p>
+                        <div class="container">
+                          <div class="number-input-2 number-input">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepDown()">-</button>
+                              <input type="number" id="number" class="form-control" value="1" min="0">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepUp()">+</button>
+                              <a href="#" style="margin-left: 20px; color: black;">Remove</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" style="height: 200px; z-index: 1;">
+                  <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <div class="item-1 p-3 d-flex" style="gap: 10px;">
+                      <div class="item-1-img" style="width: 30%; height: 100%;"><img width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/2277/5269/files/114_7eefbfd9-65ba-4894-8e5d-9102969bda3a.jpg?v=1720785901&width=210" alt=""></div>
+                      <div class="item-1-text d-flex flex-column">
+                        PRET
+                        <a href="baroque-third-page.html" style="display: block; color: black; text-decoration: none;">PRINTED LAWN PR-958</a>
+                        PKR 4,990.00
+                        <p>S</p>
+                        <div class="container">
+                          <div class="number-input-2 number-input">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepDown()">-</button>
+                              <input type="number" id="number" class="form-control" value="1" min="0">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepUp()">+</button>
+                              <a href="#" style="margin-left: 20px; color: black;">Remove</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="padding-bottom: 40px;">
+                <div class="col-12" style="height: 200px; z-index: 1;">
+                  <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <div class="item-1 p-3 d-flex" style="gap: 10px;">
+                      <div class="item-1-img" style="width: 30%; height: 100%;"><img width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/2277/5269/files/114_7eefbfd9-65ba-4894-8e5d-9102969bda3a.jpg?v=1720785901&width=210" alt=""></div>
+                      <div class="item-1-text d-flex flex-column">
+                        PRET
+                        <a href="baroque-third-page.html" style="display: block; color: black; text-decoration: none;">PRINTED LAWN PR-958</a>
+                        PKR 4,990.00
+                        <p>S</p>
+                        <div class="container">
+                          <div class="number-input-2 number-input">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepDown()">-</button>
+                              <input type="number" id="number" class="form-control" value="1" min="0">
+                              <button class="btn" type="button" onclick="document.getElementById('number').stepUp()">+</button>
+                              <a href="#" style="margin-left: 20px; color: black;">Remove</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-bottom p-3" style="border-top: 1px solid rgb(185, 176, 176);position: absolute; left: 0; bottom: 0px; background-color: rgb(255, 255, 255); z-index: 2; width: 100%;">
+                <h6 style="font-size: 14px; color: gray;">Taxes and shipping calculated at checkout</h6>
+                <a href="#" style="color: black;"><button class="btn" style="border: 1px solid darkgreen; background-color: darkgreen; border-radius: 0px; width: 100%; color: white;">CHECKOUT . 12,980.00</button></a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <div id="banner-1">
+      <div class="image-container">
+        <a href="baroque-second-page.html" id="banner-1-btn" class="btn">SHOP NOW</a>
+      </div>
+    </div>
+
+    
+      <div class="row d-flex justify-content-spacevenly" style="width: 100%; margin-left: 0px;">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-12 d-flex justify-content-center pt-5" style="margin-top: 20px;">
+          <div id="main-image-1" style="width: 80%;">
+            <div id="main-image-1-div" class="d-flex flex-column justify-content-center align-items-center">
+              <h2 class="text-white font-weight-bolder">STITCHED</h2>
+              <a href="baroque-second-page.html"><button class="btn btn-light p-3" style="width: 100%; border-radius: 0px;">SHOP NOW</button></a>
+            </div>
+            <img width="100%" height="auto"  src="https://baroque.pk/cdn/shop/files/02_Banner163.jpg?v=1722257929&width=1000" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-12 d-flex justify-content-center pt-5" style="margin-top: 20px;">
+          <div id="main-image-2" style="width: 80%;">
+            <div id="main-image-2-div" class="d-flex flex-column justify-content-center align-items-center">
+              <h2 class="text-white font-weight-bolder">CHANTELLE</h2>
+              <a href="baroque-second-page.html"><button class="btn btn-light p-3" style="width: 100%; border-radius: 0px;">SHOP NOW</button></a>
+            </div>
+            <img width="100%" height="auto" src="https://baroque.pk/cdn/shop/files/02_Banner53_015c117a-62f0-4471-95a4-ac347b09397f.jpg?v=1722257977&width=1000" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row d-flex justify-content-spacevenly" style="width: 100%; margin-left: 0px;">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-12 d-flex justify-content-center pt-5" style="margin-top: 20px;">
+          <div id="main-image-1" style="width: 80%;">
+            <div id="main-image-1-div" class="d-flex flex-column justify-content-center align-items-center">
+              <h2 class="text-white font-weight-bolder">SWISS LAWN</h2>
+              <a href="baroque-second-page.html"><button class="btn btn-light p-3" style="width: 100%; border-radius: 0px;">SHOP NOW</button></a>
+            </div>
+            <img width="100%" height="auto"  src="https://baroque.pk/cdn/shop/files/02_Banner159.jpg?v=1721653565&width=1000" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-12 d-flex justify-content-center pt-5" style="margin-top: 20px;">
+          <div id="main-image-2" style="width: 80%;">
+            <div id="main-image-2-div" class="d-flex flex-column justify-content-center align-items-center">
+              <h2 class="text-white font-weight-bolder">UNSTICHED</h2>
+              <a href="baroque-second-page.html"><button class="btn btn-light p-3" style="width: 100%; border-radius: 0px;">SHOP NOW</button></a>
+            </div>
+            <img width="100%" height="auto" src="https://baroque.pk/cdn/shop/files/02_Banner162.jpg?v=1722258012&width=1000" alt="">
+          </div>
+        </div>
+      </div>
+
+
+    <hr style="margin-top: 8%; margin-bottom: 3%;">
+
+      <div id="heading-and-links" class="col-md-12 col-lg-12 col-xl-12 col-xxl-12 col-12" style="padding: 50px;">
+        <h2>
+          Daily Intermix
+        </h2>
+        <p>
+          Elevate your style with versatile separates, the essentials of any wardrobe.
+        </p>
+        <a href="#" style="width: 150px;">
+          Shop Dupattas 
+          <svg width="25" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
+        <a href="#" style="width: 141px;">
+          Shop Bottoms 
+          <svg width="25" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>  
+        </a>
+        <a href="#" style="width: 132px;">
+          Shop Shawls 
+          <svg width="25" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
+        <a id="red-line" href="#" style="color:red; width: 186px;">
+          Shop Special Prices 
+          <svg width="25" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="red" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
+      </div>
+
+    <hr>
+
+
+
+    <div id="carouselExampleAutoplaying carouselExampleDark" class="carousel  carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+      </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-item-div-1 d-flex justify-content-center p-3">
+              <div style="width: 40%;">
+                <img src="https://baroque.pk/cdn/shop/files/Shop_The_Look70.jpg?v=1722258341&width=800" class="d-block w-100" alt="...">
+              </div>
+              <div class="d-flex flex-column justify-content-center align-items-center text-center carousel-item-div-1-div2" style="width: 40%;">
+                <div id="viw-product-img"  style="height: 50%; width: 60%;">
+                  <!-- <img width="100%" height="100%" src="https://baroque.pk/cdn/shop/files/62_109ebe9b-f43c-48a1-93ef-29213cd3da0e.jpg?v=1722409688&width=800" alt=""> -->
+                </div>
+                <p><a href="#" style="color: black; text-decoration: none; cursor: pointer; font-weight: 200;">
+                  EMBROIDERED CHIFFON UF-618
+                </a></p>
+                <p>
+                  Sale pricePKR 14,990.00
+                </p>
+                <a href="baroque-third-page.html" style="text-decoration: none;"><button class="btn" style="border-radius: 0px;">VIEW PRODUCT</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item-div-1 d-flex justify-content-center p-3">
+              <div style="width: 40%;">
+                <img src="https://baroque.pk/cdn/shop/files/Shop_The_Look68.jpg?v=1721733785&width=800" class="d-block w-100" alt="...">
+              </div>
+              <div class="d-flex flex-column justify-content-center align-items-center text-center carousel-item-div-1-div2" style="width: 40%;">
+                <div id="viw-product-img-1"  style="height: 50%; width: 60%;">
+                  <!-- <img width="100%" height="100%" src="https://baroque.pk/cdn/shop/files/62_109ebe9b-f43c-48a1-93ef-29213cd3da0e.jpg?v=1722409688&width=800" alt=""> -->
+                </div>
+                <p><a href="#" style="color: black; text-decoration: none; cursor: pointer; font-weight: 200;">
+                  EMBROIDERED CHIFFON UF-618
+                </a></p>
+                <p>
+                  Sale pricePKR 14,990.00
+                </p>
+                <a href="baroque-third-page.html" style="text-decoration: none;"><button class="btn" style="border-radius: 0px;">VIEW PRODUCT</button></a>
+              </div>
+            </div>
+          </div>
+          <div  class="carousel-item">
+            <div class="carousel-item-div-1 d-flex justify-content-center p-3">
+              <div style="width: 40%;">
+                <img src="https://baroque.pk/cdn/shop/files/Shop_The_Look67.jpg?v=1721733786&width=1000" class="d-block w-100" alt="...">
+              </div>
+              <div class="d-flex flex-column justify-content-center align-items-center text-center carousel-item-div-1-div2" style="width: 40%;">
+                <div id="viw-product-img-2"  style="height: 50%; width: 60%;">
+                  <!-- <img width="100%" height="100%" src="https://baroque.pk/cdn/shop/files/62_109ebe9b-f43c-48a1-93ef-29213cd3da0e.jpg?v=1722409688&width=800" alt=""> -->
+                </div>
+                <p><a href="#" style="color: black; text-decoration: none; cursor: pointer; font-weight: 200;">
+                  EMBROIDERED CHIFFON UF-618
+                </a></p>
+                <p>
+                  Sale pricePKR 14,990.00
+                </p>
+                <a href="baroque-third-page.html" style="text-decoration: none;"><button class="btn" style="border-radius: 0px;">VIEW PRODUCT</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    <hr>
+  
+    
+      <div class="container-fluid p-3">
+        <h1 class="text-center">BE INSPIRED</h1>
+        <div class="row p-3">
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 p-3 video-text">
+            <button class="btn btn-dark" style="border-radius: 0px;">CLIENT LOVE</button>
+            <video width="100%" height="100%" src="https://baroque.pk/cdn/shop/videos/c/vp/818ab629c0fc4ebd8394e039a8d3933d/818ab629c0fc4ebd8394e039a8d3933d.HD-1080p-2.5Mbps-30974964.mp4?v=0" autoplay muted loop></video>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 p-3 video-text">
+            <button class="btn btn-dark" style="border-radius: 0px;">CELEBRITY STYLE</button>
+            <video  width="100%" height="100%" src="https://baroque.pk/cdn/shop/videos/c/vp/0a5686360ef44970ac446df91f58fdef/0a5686360ef44970ac446df91f58fdef.HD-1080p-7.2Mbps-30964712.mp4?v=0" autoplay muted loop></video>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 p-3 video-text">
+            <button class="btn btn-dark" style="border-radius: 0px;">STYLE SPOTTED</button>
+            <video  width="100%" height="100%" src="https://baroque.pk/cdn/shop/videos/c/vp/dc996c17361b4b908e006bd598dceaee/dc996c17361b4b908e006bd598dceaee.HD-1080p-2.5Mbps-31943223.mp4?v=0" autoplay muted loop></video>
+          </div>
+        </div>
+      </div>
+
+    <hr>
+
+      <div class="container-fluid text-center p-5 d-flex flex-column justify-content-center align-items-center">
+        <h6 style="letter-spacing: 2px;">SUBSCRIBE FOR NEWSLETTER</h6>
+        <div class="form m-3 d-flex justify-content-center" style="gap: 1%; width: 300px;">
+            <input style="border-radius: 0px; border: 1px solid black; padding: 9px 0px 9px 9px; width: 70%;" type="email" placeholder="E-mail" required>
+            <button style="border-radius: 0px;" type="submit" class="btn btn-dark">Subscribe</button>
+        </div>
+      </div>
+
+
+    <hr>
+
+      <div class="container-fluid">
+      <div class="row p-5">
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 footer-div-1 p-3">
+            <h4>
+              About
+            </h4>
+            <a href="#">
+              Who We Are
+            </a>
+            <a href="#">
+              Our Responsibility
+            </a>
+            <a href="#">
+              Service We Provide
+            </a>
+            <a href="#">
+              Careers
+            </a>
+            <a href="#">
+              Legal   
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 footer-div-1 p-3">
+            <h4>
+              Customer Service
+            </h4>
+            <a href="#">
+              Contact Us
+            </a>
+            <a href="#">
+              Dispatch Timeline
+            </a>
+            <a href="#">
+              Email: info@baroque.pk
+            </a>
+            <a href="#">
+              Call: +92 325 700 1111
+            </a>
+            <a href="#">
+              WhatsApp: +92 325 7001111
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-12 footer-div-1 p-3">
+            <h4>
+              Policies
+            </h4>
+            <a href="#">
+              Privacy Policy
+            </a>
+            <a href="#">
+              Refund Policy
+            </a>
+            <a href="#">
+              Shipping Policy
+            </a>
+            <a href="#">
+              Terms of Service
+            </a>
+            <a href="#">
+              Exchange Information
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="container-fluid d-flex p-3" style="display: flex; justify-content: space-between;">
+        <div class="input">
+          <select name="Country" id="Country" style="border: none; border-radius: 0px; border-bottom: 1px solid black;">
+            <option value="Select">--Select Country--</option>
+            <option value="Select">Pakistan</option>
+            <option value="Select">Afganistan</option>
+            <option value="Select">United States</option>
+            <option value="Select">India</option>
+            <option value="Select">Canda</option>
+          </select>
+        </div>
+        <div class="mark">
+          © 2024 - BAROQUE
+        </div>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>

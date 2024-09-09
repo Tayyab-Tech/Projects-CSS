@@ -1,0 +1,379 @@
+*{
+    margin: 0;padding: 0;
+    font-family: 'Alata', sans-serif !important;
+}
+/* -------- header  */
+header{
+    height: 130px;
+    width: 100%;
+    padding-top: 10px;
+    background-color: white !important;
+    z-index: 1;
+}
+/* ------ top header  */
+.welcome{
+    display: flex;
+    position: relative;
+    height: 25px;
+    background-color: #F3F3F3 !important;
+    z-index: 3;
+    font-family: 'Alata', sans-serif !important;
+    font-size: 12px;
+}
+.welcome a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Alata', sans-serif !important;
+    font-size: 12px;
+}
+.welcome select{
+    position: absolute;
+    top: -1px;
+    left: 440px;
+    background-color: transparent !important;
+    border: none;
+    font-family: 'Alata', sans-serif !important;
+    font-size: 12px;
+}
+.top-header{
+    display: flex;
+    position: fixed;
+    background-color: rgb(196, 40, 40);
+    width: 100%;
+    z-index: 2;
+}
+.top-header .span-1{
+    display: flex;
+    position: absolute;
+    left: 125px;
+    gap: 12px;
+}
+.top-header .span-2{
+    position: absolute;
+    right: 80px;
+    bottom: -19px;
+}
+.top-header .span-3{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 16px;
+}
+/* ------- middle header */
+.middle-header{    
+    margin: 8px 0px 8px 0px;
+    cursor: pointer;
+    position: fixed;
+    top: -8px;
+    width: 100%;
+    height: 120px;
+    background-color: rgb(255, 255, 255) !important;
+    z-index: 1;
+}
+.middle-header a{
+    padding: 36px 400px 1px 400px;
+    position: absolute;
+    bottom: 30px;
+    left: 15%;
+}
+/* ------- bottom header  */
+.bottom-header{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 45px;
+    background-color: white !important;
+    z-index: 1;
+}
+.bottom-header ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+/* ----- main  */
+.heading-1{
+    margin: 10px 0px 10px 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+main{
+    margin-bottom: 60px;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.first-part{
+    height: 330px;
+    width: 70%;
+}
+.last-part{
+    height: 350px;
+    width: 25%;
+}
+.upper-part{
+    display: flex;
+    gap: 70px;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+.upper-part p{
+    font-weight: 700;
+}
+.upper-part p:nth-child(1){
+    margin-right: 55%;
+}
+.middle-part-start{
+    display: flex;
+    padding: 10px;
+}
+.middle-part-start-div2{
+    margin: 0px 40px 0px 40px;
+    width: 300px;
+}
+.middle-part-start-div2 a, .middle-part-start-div3 p,.middle-part-start-div5 p{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.middle-part-start-div2 a:hover{
+    color: gray;
+    text-decoration: underline;
+}
+.middle-part-start-div3{
+    margin: 0px 0px 0px 15px;
+    width: 130px;
+}
+.middle-part-start-div4{
+    margin: 0px 0px 0px 20px;
+    width: 80px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.middle-part-start-div4 input{
+    width: 60%;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    font-size: 14px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+.middle-part-start-div4 input:active{
+    box-shadow: 0px 0px 8px rgb(44, 44, 199);
+}
+.middle-part-start-div5{
+    margin: 0px 0px 0px 0px;
+    width: 130px;
+}
+.middle-part-end{
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    margin:20px 0px 30px 0px;
+    padding:0px 18px 10px 0px;
+    border-bottom: 1px solid gray;
+}
+.lower-part{
+    display: flex;
+    justify-content: flex-end;
+}
+.lower-part a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    background-color: black;
+    border: 2px solid black;
+}
+.lower-part a:hover{
+    background-color: white;
+    color: black;
+}
+/* ------ last part  */
+.last-part{
+    padding: 15px;
+    background-color: rgba(235, 235, 235, 0.845);
+}
+.last-part-div1{
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px solid rgb(148, 148, 148);
+}
+.last-part-div1 h2{
+    font-weight: 200;
+}
+.last-part-div2{
+    padding: 15px 0px 10px 0px;
+    border-bottom: 1px solid rgb(148, 148, 148);
+    display: flex;
+    justify-content: space-between;
+}
+.last-part-div2 p{
+    font-size: 14px;
+    font-weight: 600;
+}
+.last-part-div3{
+    padding: 15px 5px 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(148, 148, 148);
+}
+.last-part-div3-part1{
+    width: 45%;
+    padding-top: 10px;
+}
+.last-part-div3-part2{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.last-part-div3-part1 p{
+    padding-bottom: 18px;
+}
+.last-part-div3-part2 p{
+    padding-bottom: 18px;
+}
+.last-part-div4{
+    padding: 25px 5px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+}
+.last-part-div5{
+    padding: 50px 5px 0px 0px;
+    font-size: 18px;
+}
+.last-part-div5 a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    border: 2px solid black;
+}
+.last-part-div5 a:hover{
+    color:white;
+    background-color: black;
+}
+/* ---------- sign up div  */
+.sign-up-div{
+    background-color: #232323;
+    width: 88%;
+    height: 300px;
+    margin-bottom: 40px;
+    position: relative;
+    left: 7%;
+    color: white;
+}
+.sign-up-text{
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    left: 33%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sign-up-text h1{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.sign-up-text p{
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sign-up-button{
+    display: flex;
+    gap: 10px;
+}
+#email{
+    width: 80%;
+    padding: 10px 15px 10px 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: none;
+}
+#sign-up{
+    padding: 9px 10px 9px 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/* ----- footer  */
+footer{
+    height: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+footer ul{
+    list-style: none;
+    line-height: 25px;
+}
+footer a{
+    color: gray;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.footer-div-1 a{
+    line-height: 50px;
+}
+.footer-div-1 h1{
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 25px;
+}
+.footer-div-2 h1,.footer-div-3 h1,.footer-div-4 h1{
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+.footer-div-1{
+    width: 32%;
+    padding: 20px 20px 40px 40px;
+}
+.footer-div-2{
+    width: 19%;
+    padding: 20px 20px 40px 40px;
+}
+.footer-div-3{
+    width: 10%;
+    padding: 20px 20px 40px 40px;
+}
+.footer-div-4{
+    width: 19%;
+    padding: 20px 20px 40px 0px;
+    position: relative;
+}
+.footer-div-4 a{
+    position: absolute;
+}
+#icon-2{
+   left: 40px; 
+}
+#icon-3{
+   left: 80px; 
+}
+#icon-4{
+   left: 120px; 
+}
+#icon-5{
+   left: 160px; 
+}
+#icon-6{
+   top: 120px; 
+}

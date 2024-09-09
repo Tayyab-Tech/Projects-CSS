@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Landing Page</title>
+    <link rel="stylesheet" href="j-landing-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Martel+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        *{
+            letter-spacing: 1px;
+            font-family: 'Alata', sans-serif !important;
+        }
+        body {
+            background-image: url(https://www.junaidjamshed.com/media/wysiwyg/monsoon3.jpg);
+            background-size:cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media only screen and (max-width:633px){
+            body {
+                background-image: url(https://www.junaidjamshed.com/media/wysiwyg/monsoon4.jpg);
+            }
+        }
+        .container{
+            padding-right: 110px;
+        }
+        .logo-And-button {
+            border-radius: 10px;
+            text-align: center;
+        }
+        .logo-And-button select, .logo-And-button a {
+            width: 150%;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.31);
+            border: 1px solid white;
+            color: white;
+            text-align: center;
+            font-family: 'Alata', sans-serif;
+        }
+        .logo-And-button select{
+            line-height: 1px;
+        }
+        .logo-And-button a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-family: 'Martel Sans', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+        .logo-And-button a:hover {
+            background-color: black;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="logo-And-button">
+            <img style="padding-left: 60px;" src="https://www.junaidjamshed.com/media/email/logo/stores/1/logo.png" alt="Logo" class="logo img-fluid" width="147" height="146">
+            <select name="country" id="country" class="form-control">
+                <option value="Pakistan">Pakistan</option>
+                <option value="Canada">Canada</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Rest of the World">Rest of the World</option>
+            </select>
+            <a href="j-hompage.html" class="btn btn-dark mt-3">Enter</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+        alert("This site is not responsive")
+	</script>
+	
+</body>
+</html>

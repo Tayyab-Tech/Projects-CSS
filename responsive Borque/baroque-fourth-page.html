@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .checkout-container {
+            margin-top: 50px;
+        }
+        .card-header {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+        .form-check-label {
+            font-weight: normal;
+        }
+        .order-summary {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .order-summary h4 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .order-item img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .order-item .item-details {
+            flex-grow: 1;
+        }
+        .order-item .item-price {
+            font-weight: bold;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: right;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="display: flex; justify-content: center;">
+        <a class="navbar-brand" href="baroque-first-page.html"><img width="100px" src="https://baroque.pk/cdn/shop/files/New_Logo.png?v=1722501548&width=280" alt=""></a>
+    </nav>
+    <div class="container checkout-container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form>
+                            <h5>Contact</h5>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="emailOffers">
+                                <label class="form-check-label" for="emailOffers">Email me with news and offers</label>
+                            </div>
+                            <hr>
+                            <h5>Delivery</h5>
+                            <div class="form-group">
+                                <label for="country">Country/Region</label>
+                                <select id="country" class="form-control">
+                                    <option selected>Pakistan</option>
+                                    <option>Cnada</option>
+                                    <option>India</option>
+                                    <option>Austrila</option>
+                                    <option>United states</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment">Apartment, suite, etc. (optional)</label>
+                                <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, etc.">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" placeholder="City">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="postalCode">Postal Code (optional)</label>
+                                    <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="saveInfo">
+                                <label class="form-check-label" for="saveInfo">Save this information for next time</label>
+                            </div>
+                            <hr>
+                            <h5>Payment</h5>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="cod" name="paymentMethod" checked>
+                                <label class="form-check-label" for="cod">Cash on Delivery (COD)</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="cardPayment" name="paymentMethod">
+                                <label class="form-check-label" for="cardPayment">Stripe Checkout - pay with debit & credit cards</label>
+                                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="ml-2">
+                                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+                            </div>
+                            <hr>
+                            <h5>Billing Address</h5>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="sameAddress" name="billingAddress" checked>
+                                <label class="form-check-label" for="sameAddress">Same as shipping address</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="differentAddress" name="billingAddress">
+                                <label class="form-check-label" for="differentAddress">Use a different billing address</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mt-4" style="background-color: darkgreen;">Complete Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div class="order-item">
+                        <img src="https://cdn.shopify.com/s/files/1/2277/5269/files/114_7eefbfd9-65ba-4894-8e5d-9102969bda3a_64x64.jpg?v=1720785901" alt="Product Image">
+                        <div class="item-details">
+                            <div>PRINTED LAWN PR-946</div>
+                            <div class="item-price">Rs. 6,995.00</div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://cdn.shopify.com/s/files/1/2277/5269/files/54_16387795-c0e0-4445-a882-0261a1d6b475_64x64.jpg?v=1722428797" alt="Product Image">
+                        <div class="item-details">
+                            <div>PRINTED LAWN PR-948</div>
+                            <div class="item-price">Rs. 7,960.00</div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://cdn.shopify.com/s/files/1/2277/5269/files/200_d020adac-8ae1-4954-a23c-f577ebfd75c7_64x64.jpg?v=1722672610" alt="Product Image">
+                        <div class="item-details">
+                            <div>EMBROIDERED LAWN PR-970</div>
+                            <div class="item-price">Rs. 6,995.00</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="order-item">
+                        <div>Subtotal</div>
+                        <div class="item-price">Rs. 21,950.00</div>
+                    </div>
+                    <div class="order-item">
+                        <div>Shipping</div>
+                        <div class="item-price">Free</div>
+                    </div>
+                    <hr>
+                    <div class="total d-flex" style="justify-content: space-between;">
+                        <p>Total</p>
+                        <p>Rs. 21,950.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
